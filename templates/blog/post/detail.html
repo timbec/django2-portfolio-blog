@@ -4,4 +4,11 @@
 {% block content %}
 <h1>{{ post.title }}</h1>
 <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
-{{ post.body | linebreaks }} {% endblock %}
+{{ post.body | linebreaks }}
+
+<!-- have to find a way to resolve post_share url -->
+<p>
+    <a href="">Share This Post</a>
+</p>
+
+{% endblock %}
