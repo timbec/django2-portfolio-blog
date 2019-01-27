@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
+from django.core.mail import send_mail
 
 from .models import Post
 from .forms import EmailPostForm
+
 
 # Create your views here.
 
@@ -46,12 +48,14 @@ def post_share(request, post_id):
         if form.is_valid():
                 # Form fields pass validation
             cd = form.cleaned_data
-            post_url = request.build_absolute_uri(post.get_absolute_uri())
+            post_url = request.build_absolute_uri(post.get_absolute_url())
+
             subject = '{} ({}) recommends you reading "{}"'.format(
                 cd['name'], cd['email'], post.title)
             message = 'Read "{}" at {}\n\n{}\'s comments: {}'.format(
                 post.title, post_url, cd['name'], cd['comments'])
-            send_mail(subject, message, 'admin@myblog.com', [cd['to']])
+            send_mail(subject, message, 'admin@tim-beckett.com',
+                      [cd['to']])
             sent = True
     else:
         form = EmailPostForm()
