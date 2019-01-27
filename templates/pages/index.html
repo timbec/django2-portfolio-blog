@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="front-page-container">
+    <article id="about" class="">
+        <div class="left">
+            <p>
+                I am a Front End/Python Developer, with a background in website
+                development and, before that, in broadcast media. I have approximately
+                five years experience in both front and back end development. I started
+                as a developer with the arts and literature magazine, Sensitive Skin,
+                where I conceptualized and developed the website with the publisher.
+                Since then I've been freelancing and have been lucky enough to work for
+                clients such as the NYTimes, the Wall Street Journal, Weil, Gotshal and
+                Manges, Lazard Asset Management, EPIX TV and, most recently, Mullen Lowe
+                Profero.
+            </p>
+            <p>
+                Lately, I’ve been working with React.js, Vue.js on the front end and
+                Python Django framework on the back end, though have used PHP,
+                Wordpress, and Laravel extensively in the past. I also create in VR/AR
+                using Mozilla’s A-Frame through my work with the language learning
+                startup CieloXR. I enjoy working in Python and would like to gain more
+                practical experience using it, both in web development and its (many)
+                other capacities.
+            </p>
+        </div>
+        <div class="right">
+            <p>
+                My work with CieloXR has led to an interest in the possibilities for
+                Virtual and Augmented Reality especially in the field of EdTech, along
+                with its possibilities in art. I am also starting my own project
+                developing living history websites on the Python Django platform. I like
+                working in Python and would like to gain more practical experience using
+                it, in both web development and its (many) other capacities. I've also
+                become interested in Machine Learning and Artificial Intelligence and
+                would, eventually, like to work in those fields, and eventually find a
+                way to combing AI/ML with VR for better learning experiences.
+            </p>
+            <p>
+                I am also a writer and have published features, stories, and essays, web
+                content, occasional copy and have excellent documentation skills. I will
+                be writing about VR/AR and AI as I gain more experience and knowledge in
+                those fields.
+            </p>
+
+            <p>
+                This site is built on the Python Django Framework. Eventually I might
+                build this out using GraphQL and React (or just in Gatsby.js, which
+                combines both), but for the moment it is just plain Django. Please be
+                patient while I get this site in order.
+            </p>
+        </div>
+
+        <!-- <button id="support-button"></button> -->
+    </article>
+</section>
+<!-- <section id="slider">
+  <div class="slider-wrapper">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</section> -->
+<section id="portfolio">
+    <h3>Portfolio</h3>
+    <ul class="content__list">
+        <li class="work">
+            <img src="{% static 'images/portfolio/epix.svg' %}" alt="" />
+        </li>
+        <li class="work">
+            <img src="{% static 'images/portfolio/weil.png' %}" alt="" />
+        </li>
+        <li class="work">
+            <img src="{% static 'images/portfolio/image.png' %}" alt="" />
+        </li>
+        <li class="work">
+            <img src="{% static 'images/portfolio/nytimes_logo.jpg' %}" alt="" />
+        </li>
+    </ul>
+</section>
+{% endblock %}
