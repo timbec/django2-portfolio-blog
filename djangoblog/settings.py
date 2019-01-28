@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# https://www.reddit.com/r/djangolearning/comments/870j2e/django_dirs_ospathjoinbase_dir_templates/
+BASE_DIR = os.path.dirname(os.path.dirname((__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig',
     'pages.apps.PagesConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # this should be looking in each app (blog, pages) directory for templates folder.
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
