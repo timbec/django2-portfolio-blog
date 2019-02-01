@@ -6,10 +6,16 @@ from django.db.models import Count
 from .models import Post, Comment
 from .forms import EmailPostForm, CommentForm
 
+from taggit.models import Tag
+
 
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
     tag = None
+
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        object_list = object_list.filter(tags__in=[tag])
 
     paginator = Paginator(object_list, 3)  # 3 posts in each page
     page = request.GET.get('page')
