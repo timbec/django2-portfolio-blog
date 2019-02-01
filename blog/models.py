@@ -8,8 +8,7 @@ from django.contrib.auth.models import User
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedManager, self).get_queryset() \
-            .filter(status='published')
+        return super(PublishedManager, self).get_queryset().filter(status='published')
 
 
 class Post(models.Model):
@@ -19,7 +18,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=250)
     # took out unique_for_date='publish'
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField()
@@ -35,10 +34,14 @@ class Post(models.Model):
         return reverse('blog:post_detail', args=[self.slug])
 
     class Meta:
-        ordering = ('publish',)
+        ordering = ('-publish',)
 
     def __str__(self):
         return self.title
+
+        def get_absolute_url(self):
+            return reverse('blog:post_detail',
+                           args=[self.slug])
 
 
 class Comment(models.Model):

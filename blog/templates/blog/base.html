@@ -1,15 +1,48 @@
-{% load static %} <!DOCTYPE html>
-<html>
-  <head>
-    <title>{% block title %}{% endblock %}</title>
-    <link href="{% static " css/blog.css" %}" rel="stylesheet">
-  </head>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body>
-    <div id="content">{% block content %} {% endblock %}</div>
-    <div id="sidebar">
-      <h2>My blog</h2>
-      <p>This is my blog.</p>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Tim Beckett Portfolio</title>
+
+  <!-- CSRF Token -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css" />
+
+  <!-- <link rel="stylesheet" href="https://use.typekit.net/dxe7rkb.css"> -->
+
+  <!-- Styles -->
+
+</head>
+
+<body>
+  <header id="masthead">
+    <h1 id="site-title">
+      <a href="/">
+        <span class="title"> Tim Beckett </span>
+        <span class="tagline"> Web Portfolio </span>
+      </a>
+    </h1>
+    <!-- Nav Bar -->
+    <!-- Check Traversy Tutorial. Make sure '' inside "", otherwise throws error. -->
+  </header>
+
+  <div id="content">{% block content %} {% endblock %}</div>
+  <footer class="container text-center">
+    <ul class="footer-links">
+      <li><a href="https://www.linkedin.com/in/timbeckett1/">Linkedin</a></li>
+      <li><a href="https://twitter.com/tim_beckett">Twitter</a></li>
+      <li><a href="https://github.com/timbec">Github</a></li>
+      <li><a href="https://codepen.io/timbeckett/">CodePen</a></li>
+    </ul>
+    <!-- -.footer-links -->
+
+    <p class="footer-copyright">&copy; Tim Beckett 2018</p>
+  </footer>
+
+</body>
+
 </html>

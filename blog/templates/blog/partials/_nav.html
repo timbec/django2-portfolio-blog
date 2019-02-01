@@ -1,0 +1,17 @@
+{% load static %}
+<div class="menu-container">
+    <nav id="mySideNav" class="menu sidenav">
+        <div class="toggleNav">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <ul class="menu sidenav">
+            <li class="nav-item"><a href="/#about">About</a></li>
+            <li class="nav-item"><a href="/#portfolio">Portfolio</a></li>
+            <li class="active nav-item"><a href="{% url 'contact' %}">Contact</a></li>
+
+            <li class="nav-item"><a href="{% url 'blog' %}">Blog</a></li>
+        </ul>
+    </nav>
+</div>
